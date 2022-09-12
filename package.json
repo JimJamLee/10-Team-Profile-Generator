@@ -1,0 +1,32 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "A command line application used to generate an HTML page with employee summaries based on information entered when the application is first run.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimJamLee/10-Team-Profile-Generator.git"
+  },
+  "keywords": [
+    "team",
+    "profile",
+    "generator",
+    "node.js"
+  ],
+  "author": "James Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimJamLee/10-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/JimJamLee/10-Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^26.5.2"
+  }
+}

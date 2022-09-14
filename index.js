@@ -1,13 +1,14 @@
-const inquirer = require("inquirer");
-const fs = require("fs");
-const Manager = require("./lib/manager");
-const Intern = require("./lib/intern");
-const Engineer = require("./lib/engineer");
+const inquirer = require('inquirer');
+const fs = require('fs');
+const Employee = require('./lib/employee');
+const Manager = require('./lib/manager');
+const Intern = require('./lib/intern');
+const Engineer = require('./lib/engineer');
+
+const render = require('./src/generateHtml.js');
 
 const teamMembers = [];
 const teamIds = [];
-const renderHtml = require("./src/generateHtml")
-
 
 function buildTeam() {
     console.log("Start building the team profile.")
@@ -86,7 +87,7 @@ function buildTeam() {
                     addEngineer();
                     break;
                 default:
-                    generateHtml();
+                    renderHtml();
             }
         })
     }
@@ -199,10 +200,9 @@ function buildTeam() {
         })
     }
 
-    function generateHtml() {
-        fs.writeFileSync('./dist/index.html', renderHtml(teamMembers), 'utf-8')
-        .then(() => console.log('Team profile generated'))
-        .catch ((err) => console.log(err))
+    function renderHtml() {
+        fs.writeFileSync('./dist/index.html', render(teamMembers), 'utf-8');
+        console.log('Team profile generated');
     }
 
     addManager();
